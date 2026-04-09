@@ -191,5 +191,5 @@ This project is licensed under the Apache-2.0 License. See the [LICENSE](LICENSE
 
 - **Name**: Anuphap Thianprayoon
 - **GitHub**: [anuphapth](https://github.com/anuphapth)
-- **LinkedIn**: [Anuphap Thianprayoon](https://www.linkedin.com/in/anuphap-thainprayoon-580248242/)
-- **Email**: anuphap2003118@gmail.com
+- **LinkedIn**: [Anuphap Thianprayoon](https://www.linkedin.com/in/anuphap-thianprayoon-580248242/)
+- **Email**: anuphap.thianprayoon@gmail.com

@@ -106,7 +106,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
         <div className="max-w-7xl mx-auto px-4 xs:px-6 sm:px-8 flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-8">
           <div className="flex flex-col items-center lg:items-start gap-2">
             <span className="text-on-surface-variant font-body text-xs tracking-wide uppercase text-center lg:text-left">
-              2026 Anuphap. All rights reserved.
+              © 2026 Anuphap. All rights reserved.
             </span>
           </div>
 
@@ -125,7 +125,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
             <a
               href={
                 import.meta.env.VITE_LINKEDIN_URL ||
-                "https://www.linkedin.com/in/anuphap-thainprayoon-580248242/"
+                "https://www.linkedin.com/in/anuphap-thianprayoon-580248242/"
               }
               target="_blank"
               rel="noopener noreferrer"

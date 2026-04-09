@@ -65,15 +65,17 @@ const Contact: React.FC = () => {
             {[
               {
                 icon: Mail,
-                label: import.meta.env.VITE_EMAIL || "anuphap2003118@gmail.com",
-                href: `mailto:${import.meta.env.VITE_EMAIL || "anuphap2003118@gmail.com"}`,
+                label:
+                  import.meta.env.VITE_EMAIL ||
+                  "anuphap.thianprayoon@gmail.com",
+                href: `mailto:${import.meta.env.VITE_EMAIL || "anuphap.thianprayoon@gmail.com"}`,
               },
               {
                 icon: Linkedin,
                 label: "LinkedIn",
                 href:
                   import.meta.env.VITE_LINKEDIN_URL ||
-                  "https://www.linkedin.com/in/anuphap-thainprayoon-580248242/",
+                  "https://www.linkedin.com/in/anuphap-thianprayoon-580248242/",
               },
               {
                 icon: Github,

@@ -118,7 +118,7 @@ const About: React.FC = () => {
             <div className="flex flex-col lg:flex-row justify-between gap-6 xs:gap-8">
               <div className="flex-1">
                 <h3 className="font-bold text-lg xs:text-xl sm:text-2xl mb-3">
-                  Iot-ThiJodRot-Web
+                  IoT-ThiJodRot-Web
                 </h3>
                 <p className="text-on-surface-variant mb-4 xs:mb-6 leading-relaxed text-sm xs:text-base">
                   A responsive web application that displays real-time parking

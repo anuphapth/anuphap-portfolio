@@ -23,7 +23,7 @@ interface Repo {
 
 const projectTitles: Record<string, string> = {
   "Bazi-informed-Restaurant-Business-Analysis": "Restaurant Analytics Platform",
-  "Iot-ThiJodRot-Web": "Iot ThiJodRot ",
+  "IoT-ThiJodRot-Web": "IoT ThiJodRot ",
 };
 
 const Projects: React.FC = () => {
@@ -47,7 +47,7 @@ const Projects: React.FC = () => {
         const selectedRepos = data.filter((repo) =>
           [
             "Bazi-informed-Restaurant-Business-Analysis",
-            "Iot-ThiJodRot-Web",
+            "IoT-ThiJodRot-Web",
           ].includes(repo.name),
         );
 
