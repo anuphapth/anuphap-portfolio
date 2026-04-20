@@ -79,7 +79,7 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 xs:px-6 sm:px-8 py-16 xs:py-20">
+    <div>
       {/* Header */}
       <motion.span
         initial={{ opacity: 0, y: 20 }}
@@ -99,15 +99,16 @@ const Skills: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="font-headline text-3xl xs:text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-4 xs:mb-6"
         >
-          Engineering
-          <span className="text-primary"> Stack</span>
+          Engineering <span className="text-primary">Stack</span>
         </motion.h1>
+
+        {/* 👇 บรรทัดเดียว desktop */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-body text-base xs:text-lg text-on-surface-variant max-w-2xl xl:max-w-5xl leading-relaxed"
+          className="font-body text-base xs:text-lg text-on-surface-variant max-w-2xl xl:max-w-none xl:whitespace-nowrap leading-relaxed"
         >
           Focused on backend development APIs, data systems, and business logic
           while growing skills in frontend interfaces.
@@ -166,7 +167,6 @@ const Skills: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="font-headline text-2xl xs:text-3xl font-bold mb-8 xs:mb-12"
         >
-          <span className="w-8 xs:w-12 h-[1px] bg-primary"></span>
           What I Build
         </motion.h2>
 

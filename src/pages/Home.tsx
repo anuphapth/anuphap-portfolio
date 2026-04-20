@@ -8,8 +8,8 @@ const Home: React.FC = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] sm:min-h-[75vh] lg:min-h-[80vh] flex items-center py-16 xs:py-20 sm:py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 xs:px-6 sm:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <section className="relative min-h-[70vh] sm:min-h-[75vh] lg:min-h-[80vh] flex items-center">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

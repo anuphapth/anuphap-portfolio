@@ -12,7 +12,7 @@ const Education: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-8 py-20">
+    <div>
       {/* Header */}
       <motion.header
         initial={{ opacity: 0, y: 20 }}
@@ -48,10 +48,15 @@ const Education: React.FC = () => {
           <div className="bg-surface-container-lowest p-12 rounded-2xl border border-outline-variant/10 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
             <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center text-on-primary-container shrink-0">
-                <GraduationCap size={32} />
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center text-on-primary-container shrink-0">
+                  <GraduationCap size={32} />
+                </div>
+                <span className="font-label text-xs font-bold text-on-surface-variant bg-surface-container px-3 py-1 rounded md:hidden">
+                  2023 — Present
+                </span>
               </div>
-              <div>
+              <div className="flex-1">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h2 className="font-headline text-2xl xs:text-3xl font-bold text-on-surface mb-2">
@@ -64,7 +69,7 @@ const Education: React.FC = () => {
                       Cumulative GPA: 3.68
                     </p>
                   </div>
-                  <span className="font-label text-xs font-bold text-on-surface-variant bg-surface-container px-3 py-1 rounded">
+                  <span className="font-label text-xs font-bold text-on-surface-variant bg-surface-container px-3 py-1 rounded hidden md:block">
                     2023 — Present
                   </span>
                 </div>

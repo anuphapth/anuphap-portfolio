@@ -22,9 +22,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <nav className="glass-nav h-16 sm:h-20 flex items-center">
-        <div className="max-w-7xl mx-auto px-4 xs:px-6 sm:px-8 w-full flex justify-between items-center">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
+      <nav className="glass-nav h-16 sm:h-20">
+        <div className="max-w-7xl mx-auto px-4 xs:px-6 sm:px-8 h-full flex items-center justify-between">
           <Link
             to="/"
             className="text-lg xs:text-xl font-bold tracking-tighter text-on-surface font-headline"
@@ -100,7 +100,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
         </AnimatePresence>
       </nav>
 
-      <main className="flex-grow">{children}</main>
+      <main className="flex-grow py-16 xs:py-20">
+        <div className="max-w-7xl mx-auto px-4 xs:px-6 sm:px-8">{children}</div>
+      </main>
 
       <footer className="w-full py-8 xs:py-10 sm:py-12 border-t border-outline-variant/10 bg-surface-container-low">
         <div className="max-w-7xl mx-auto px-4 xs:px-6 sm:px-8 flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-8">

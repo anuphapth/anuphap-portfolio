@@ -23,7 +23,7 @@ interface Repo {
 
 const projectTitles: Record<string, string> = {
   "Bazi-informed-Restaurant-Business-Analysis": "Restaurant Analytics Platform",
-  "IoT-ThiJodRot-Web": "IoT ThiJodRot ",
+  "IoT-ThiJodRot-Web": "IoT ThiJodRot",
 };
 
 const Projects: React.FC = () => {
@@ -42,6 +42,7 @@ const Projects: React.FC = () => {
           `https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=100`,
         );
         if (!response.ok) throw new Error("Failed to fetch repositories");
+
         const data: Repo[] = await response.json();
 
         const selectedRepos = data.filter((repo) =>
@@ -63,7 +64,7 @@ const Projects: React.FC = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-8 py-20">
+    <div>
       {/* Header */}
       <header className="mb-24">
         <motion.div
@@ -77,38 +78,36 @@ const Projects: React.FC = () => {
             <motion.span
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
               className="inline-block bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-4 font-label"
             >
               My Projects
             </motion.span>
+
             <motion.h1
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-headline text-3xl xs:text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-4 xs:mb-6 leading-tight"
+              transition={{ delay: 0.1 }}
+              className="font-headline text-3xl xs:text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-4 xs:mb-6"
             >
               Projects
             </motion.h1>
+
             <motion.p
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-body text-lg text-on-surface-variant leading-relaxed max-w1-xl"
+              transition={{ delay: 0.2 }}
+              className="font-body text-lg text-on-surface-variant leading-relaxed max-w-xl"
             >
               Practical backend development projects focused on APIs, databases,
               and scalable system design. Data is automatically synced from
               GitHub.
             </motion.p>
           </div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ delay: 0.3 }}
             className="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl border border-outline-variant/10"
           >
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
@@ -145,8 +144,7 @@ const Projects: React.FC = () => {
               key={repo.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.6 }}
+              transition={{ delay: idx * 0.1 }}
               whileHover={{ scale: 1.02 }}
               className="group bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden hover:border-primary/30 transition-all flex flex-col"
             >
@@ -155,7 +153,8 @@ const Projects: React.FC = () => {
                   <div className="p-3 bg-surface-container rounded-xl text-primary">
                     <Database size={24} />
                   </div>
-                  <div className="flex gap-4 text-outline group-hover:text-primary transition-colors">
+
+                  <div className="flex gap-4 text-outline group-hover:text-primary">
                     <a
                       href={repo.html_url}
                       target="_blank"
@@ -163,46 +162,49 @@ const Projects: React.FC = () => {
                     >
                       <Github size={20} />
                     </a>
-                    <a
-                      href={repo.html_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
+                    {repo.homepage && (
+                      <a
+                        href={repo.homepage}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
                   </div>
                 </div>
 
-                <h3 className="font-headline text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                <h3 className="font-headline text-2xl font-bold mb-3 group-hover:text-primary">
                   {projectTitles[repo.name] || repo.name}
                 </h3>
-                <p className="font-body text-sm text-on-surface-variant leading-relaxed mb-6 line-clamp-3">
+
+                <p className="text-sm text-on-surface-variant mb-6 line-clamp-3">
                   {repo.description ||
                     "Backend-focused project involving API design, database integration, and system architecture."}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {repo.language && (
-                    <span className="bg-surface-container-high text-[10px] px-2 py-1 rounded font-bold text-on-surface-variant uppercase tracking-wider">
-                      {repo.language}
-                    </span>
-                  )}
-                </div>
+
+                {repo.language && (
+                  <span className="bg-surface-container-high text-[10px] px-2 py-1 rounded font-bold uppercase">
+                    {repo.language}
+                  </span>
+                )}
               </div>
 
-              <div className="px-8 py-4 bg-surface-container-low border-t border-outline-variant/10 flex justify-between items-center">
-                <div className="flex gap-4">
-                  <div className="flex items-center gap-1 text-xs font-bold text-on-surface-variant">
-                    <Star size={14} className="text-tertiary" />
+              <div className="px-8 py-4 bg-surface-container-low border-t flex justify-between">
+                <div className="flex gap-4 text-xs font-bold">
+                  <span className="flex items-center gap-1">
+                    <Star size={14} />
                     {repo.stargazers_count}
-                  </div>
-                  <div className="flex items-center gap-1 text-xs font-bold text-on-surface-variant">
-                    <GitFork size={14} className="text-primary" />
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <GitFork size={14} />
                     {repo.forks_count}
-                  </div>
+                  </span>
                 </div>
-                <div className="text-[10px] font-bold text-outline uppercase tracking-widest">
+
+                <span className="text-[10px] uppercase">
                   {new Date(repo.updated_at).toLocaleDateString()}
-                </div>
+                </span>
               </div>
             </motion.div>
           ))}

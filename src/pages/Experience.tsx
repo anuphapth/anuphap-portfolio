@@ -36,7 +36,7 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-8 pt-20 pb-32">
+    <div className="max-w-7xl mx-auto px-4 xs:px-6 sm:px-8 py-16 xs:py-20">
       <header className="mb-24 max-w-3xl">
         <span className="font-label text-xs uppercase tracking-[0.2em] text-tertiary font-bold mb-4 block">
           Professional Journey
