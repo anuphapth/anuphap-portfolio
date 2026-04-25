@@ -1,65 +1,95 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React from "react";
+import { motion } from "motion/react";
+import { ArrowRight, Terminal } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { Layout } from "../components/Layout";
+
+const HomePage: React.FC = () => {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <Layout>
+      <div className="overflow-hidden">
+        {/* Hero Section */}
+        <section className="relative min-h-[70vh] sm:min-h-[75vh] lg:min-h-[80vh] flex items-center">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+              className="md:col-span-7 z-10"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full mb-6 xs:mb-8">
+                <Terminal size={14} className="xs:w-4 xs:h-4" />
+                <span className="font-label text-[10px] xs:text-xs uppercase tracking-widest font-bold">
+                  Build & Solve
+                </span>
+              </div>
+
+              <h1 className="font-headline text-5xl xs:text-6xl sm:text-7xl font-extrabold tracking-tighter text-on-surface mb-6 xs:mb-8 text-left">
+                <span className="block">Anuphap</span>
+                <span className="block pl-[1.05ch] sm:pl-0 text-primary italic">
+                  Thianprayoon
+                </span>
+              </h1>
+
+              <p className="font-body text-lg xs:text-xl text-on-surface-variant max-w-lg xs:max-w-xl mb-8 xs:mb-12 leading-relaxed">
+                I am a{" "}
+                <span className="font-semibold text-on-surface">
+                  Computer Engineering student
+                </span>{" "}
+                passionate about technology and solving complex problems. I
+                build and experiment with full stack systems, focusing on how
+                each layer works together to deliver efficient solutions.
+              </p>
+
+              <div className="flex flex-col sm:flex-wrap sm:flex-row gap-4">
+                <Link
+                  href="/projects"
+                  className="bg-primary text-on-primary px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold flex items-center justify-center gap-2 hover:translate-y-[-2px] transition-all editorial-shadow text-sm sm:text-base w-full sm:w-auto"
+                >
+                  Explore My Projects
+                  <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" />
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-primary border border-outline-variant/20 hover:bg-surface-container-low transition-colors text-sm sm:text-base w-full sm:w-auto text-center"
+                >
+                  Contact Me
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1 }}
+              className="lg:col-span-5 relative group mt-8 lg:mt-0"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+              <div className="absolute inset-0 bg-tertiary-container/30 rounded-full blur-3xl group-hover:bg-tertiary-container/50 transition-colors duration-700"></div>
+              <div className="relative aspect-square w-full max-w-md mx-auto lg:max-w-none rounded-2xl overflow-hidden editorial-shadow border border-surface-container">
+                <Image
+                  src="/assets/profile.png"
+                  alt="Anuphap Portrait"
+                  fill
+                  loading="eager"
+                  className="object-cover filter grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+            </motion.div>
+          </div>
+          <div className="absolute top-0 right-0 w-1/4 xs:w-1/3 h-full bg-surface-container-low -z-10 skew-x-12 translate-x-10 xs:translate-x-20 hidden sm:block"></div>
+        </section>
+      </div>
+    </Layout>
   );
-}
+};
+
+export default HomePage;
