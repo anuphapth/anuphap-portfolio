@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { Award, BookOpen, GraduationCap, CheckCircle } from "lucide-react";
+import { Award, GraduationCap, CheckCircle } from "lucide-react";
 import { Layout } from "../../components/Layout";
 
 const EducationPage: React.FC = () => {

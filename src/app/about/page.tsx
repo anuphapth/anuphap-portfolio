@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { LayoutTemplate, School, Code } from "lucide-react";
+import { LayoutTemplate, School } from "lucide-react";
 import Link from "next/link";
 import { Layout } from "../../components/Layout";
 

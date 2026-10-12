@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { motion } from "motion/react";
-import { Mail, Send, MessageSquare } from "lucide-react";
+import { Send, MessageSquare } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { Layout } from "../../components/Layout";
 
@@ -31,7 +31,7 @@ const ContactPage: React.FC = () => {
 
       formRef.current.reset();
       setSuccess(true);
-    } catch (error: any) {
+    } catch {
       setErrorMsg("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
@@ -54,12 +54,12 @@ const ContactPage: React.FC = () => {
           </span>
 
           <h1 className="font-headline text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
-            Let's work <span className="text-primary italic">Together</span>
+            Let&apos;s <span className="text-primary italic">Together</span>
           </h1>
 
           <p className="text-on-surface-variant text-lg leading-relaxed max-w-2xl lg:max-w-none lg:whitespace-nowrap">
-            If you're looking for someone to build something meaningful or join
-            your team, I'd love to connect.
+            If you&apos;re looking for someone to build something meaningful or
+            join your team, I&apos;d love to connect.
           </p>
         </motion.div>
 
